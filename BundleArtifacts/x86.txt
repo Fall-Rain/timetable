@@ -1,0 +1,2 @@
+MainPackage=C:\Users\zhaoq\source\repos\App3\bin\x86\Debug\timetable_0.1.5.0_x86_Debug.msix
+SymbolPackage=C:\Users\zhaoq\source\repos\App3\obj\x86\Debug\Symbols\timetable_0.1.5.0_x86_Debug.appxsym
