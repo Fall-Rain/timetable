@@ -25,8 +25,6 @@ namespace Utity
             ClientSocket.Shutdown(SocketShutdown.Both);
             ClientSocket.Close();
             return Encoding.ASCII.GetString(result, 0, 100);
-
         }
-
     }
 }

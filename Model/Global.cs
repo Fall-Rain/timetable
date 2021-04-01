@@ -5,15 +5,11 @@ namespace Model
 {
     public class Global
     {
-        public static List<KeyValuePair<int, string>> semester = new List<KeyValuePair<int, string>>() {
-            new KeyValuePair<int, string> (11,"大一上学期"),
-            new KeyValuePair<int, string> (12,"大一下学期"),
-            new KeyValuePair<int, string> (21,"大二上学期"),
-            new KeyValuePair<int, string> (22,"大二下学期"),
-            new KeyValuePair<int, string> (31,"大三上学期"),
-            new KeyValuePair<int, string> (32,"大三下学期"),
+        public static Dictionary<int, string> semester = new Dictionary<int, string>()
+        {
+            {11,"大一上学期"},{12,"大一下学期"},{21,"大二上学期"},
+            {22,"大二下学期" },{31,"大三上学期"},{32,"大三下学期"}
         };
-
         private static string url
         {
             get

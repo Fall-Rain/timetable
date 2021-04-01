@@ -43,15 +43,6 @@ namespace timetable
                 GUI_User_Pwd.Text = userSecret.PassWord?.DecryptDES();
                 GUI_rememberpassword.Checked = userSecret.RememberPassword;
             string sourcepass = userSecret.UserName;
-            //var jsonstr = userSecret.ToJson();
-            //File.Delete("app.json");
-            //using (FileStream fs = new FileStream("app.json", FileMode.CreateNew))
-            //{
-            //    using (StreamWriter sw = new StreamWriter(fs))
-            //    {
-            //        sw.Write(jsonstr);
-            //    }
-            //}
             login = HttpHelp.HttpGet("http://jw.jltc.edu.cn/", out string cookie);
             Global.Cookie = cookie;
             GetVerfyCode();
