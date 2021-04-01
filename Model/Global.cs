@@ -5,6 +5,7 @@ namespace Model
 {
     public class Global
     {
+        //C# Map
         public static Dictionary<int, string> semester = new Dictionary<int, string>()
         {
             {11,"大一上学期"},{12,"大一下学期"},{21,"大二上学期"},
