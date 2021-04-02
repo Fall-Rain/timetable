@@ -19,7 +19,6 @@ namespace Model
                 string newPath = System.IO.Path.Combine(path, "timetable");
                 System.IO.Directory.CreateDirectory(newPath);
                 return newPath;
-                
             }
         }
 
