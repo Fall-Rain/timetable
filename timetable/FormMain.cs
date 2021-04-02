@@ -8,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utity;
+using System.Linq;
 
 namespace timetable
 {
@@ -47,9 +48,9 @@ namespace timetable
             GUI_refresh.Text = "刷新";
             GUI_semester.Text = Current_semester().Value;
 
-            foreach (KeyValuePair<int, string> s in Global.semester)
+            foreach (string value in Global.semester.Values)
             {
-                GUI_semester.Items.Add(s.Value);
+                GUI_semester.Items.Add(value);
             }
 
             timetable = HttpHelp.HttpGet("http://jw.jltc.edu.cn/JWXS/pkgl/XsKB_List.aspx", Global.LoginCookie);
@@ -192,13 +193,16 @@ namespace timetable
 
         private void GUI_refresh_Click(object sender, EventArgs e)
         {
+
+
             int key = 0;
-            foreach (KeyValuePair<int, string> s in Global.semester)
+
+
+            key = Global.semester.FirstOrDefault(q => q.Value == GUI_semester.Text).Key;
+
+            if (GUI_week.Text == "")
             {
-                if (s.Value == GUI_semester.Text)
-                {
-                    key = s.Key;
-                }
+                GUI_week.Text = "1";
             }
 
             if (key == 0 || GUI_week.Text == "")
@@ -206,6 +210,7 @@ namespace timetable
                 ShowTimeTable(timetable);
                 return;
             }
+
 
             string ddlxnxqh = "20" + Convert.ToString(Global.year + (key / 10) - 1) + "-20" +
                               Convert.ToString(Global.year + (key / 10)) + "-" + Convert.ToString(key % 10);
