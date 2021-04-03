@@ -1,7 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Model;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -72,10 +70,7 @@ namespace timetable
                     { "__EVENTVALIDATION",new FeildDetail() { Xpath="//*[@id='__EVENTVALIDATION']", ContentType=ContentType.AttributeValue, AttributeKey="value" } },
 
             };
-            HtmlHelp.GetBodyInfo(() =>
-            {
-                return login;
-            }, formdata, null, "/html/body", "", out Dictionary<string, string> rootvalues, out List<Dictionary<string, string>> rangeValues);
+            HtmlHelp.GetBodyInfo(() => login, formdata, null, "/html/body", "", out Dictionary<string, string> rootvalues, out List<Dictionary<string, string>> rangeValues);
             Dictionary<string, string> pams = new Dictionary<string, string>()
             {
                     { "__VIEWSTATE",rootvalues["__VIEWSTATE"]},

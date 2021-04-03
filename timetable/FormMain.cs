@@ -226,7 +226,7 @@ namespace timetable
                 },
                 //   { "__EVENTVALIDATION",new FeildDetail() { Xpath="//*[@id='__EVENTVALIDATION']", ContentType=ContentType.AttributeValue, AttributeKey="value" } },
             };
-            HtmlHelp.GetBodyInfo(() => { return timetable; }, formdata, null, "/html/body", "",
+            HtmlHelp.GetBodyInfo(() => timetable, formdata, null, "/html/body", "",
                 out Dictionary<string, string> rootvalues, out List<Dictionary<string, string>> rangeValues);
             string __VIEWSTATE = rootvalues["__VIEWSTATE"];
             Dictionary<string, string> pams = new Dictionary<string, string>()
